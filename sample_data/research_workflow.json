@@ -1,0 +1,47 @@
+{
+  "workflow_id": "research_workflow_01",
+  "name": "Research Agent Workflow",
+  "number_of_workers": 2,
+  "tasks": [
+    {
+      "task_id": "T1",
+      "name": "Search Web",
+      "duration": 5.0,
+      "dependencies": [],
+      "task_type": "research",
+      "priority": 1
+    },
+    {
+      "task_id": "T2",
+      "name": "Read Papers",
+      "duration": 8.0,
+      "dependencies": [],
+      "task_type": "research",
+      "priority": 2
+    },
+    {
+      "task_id": "T3",
+      "name": "Analyze",
+      "duration": 10.0,
+      "dependencies": ["T1", "T2"],
+      "task_type": "analysis",
+      "priority": 3
+    },
+    {
+      "task_id": "T4",
+      "name": "Generate Report",
+      "duration": 7.0,
+      "dependencies": ["T3"],
+      "task_type": "document",
+      "priority": 2
+    },
+    {
+      "task_id": "T5",
+      "name": "Review",
+      "duration": 5.0,
+      "dependencies": ["T4"],
+      "task_type": "review",
+      "priority": 1
+    }
+  ]
+}

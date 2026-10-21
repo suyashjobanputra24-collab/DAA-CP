@@ -1,0 +1,43 @@
+{
+  "workflow_id": "multi_critical_01",
+  "name": "Multiple Critical Paths Workflow",
+  "number_of_workers": 2,
+  "tasks": [
+    {
+      "task_id": "START",
+      "name": "Start Node",
+      "duration": 4.0,
+      "dependencies": []
+    },
+    {
+      "task_id": "PATH_A1",
+      "name": "Branch Alpha Step 1",
+      "duration": 6.0,
+      "dependencies": ["START"]
+    },
+    {
+      "task_id": "PATH_A2",
+      "name": "Branch Alpha Step 2",
+      "duration": 6.0,
+      "dependencies": ["PATH_A1"]
+    },
+    {
+      "task_id": "PATH_B1",
+      "name": "Branch Beta Step 1",
+      "duration": 4.0,
+      "dependencies": ["START"]
+    },
+    {
+      "task_id": "PATH_B2",
+      "name": "Branch Beta Step 2",
+      "duration": 8.0,
+      "dependencies": ["PATH_B1"]
+    },
+    {
+      "task_id": "JOIN",
+      "name": "Join Node",
+      "duration": 3.0,
+      "dependencies": ["PATH_A2", "PATH_B2"]
+    }
+  ]
+}

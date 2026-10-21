@@ -1,0 +1,49 @@
+{
+  "workflow_id": "contention_dag_01",
+  "name": "High Worker Contention Workflow",
+  "number_of_workers": 2,
+  "tasks": [
+    {
+      "task_id": "C_START",
+      "name": "Broadcast Trigger",
+      "duration": 2.0,
+      "dependencies": [],
+      "task_type": "trigger"
+    },
+    {
+      "task_id": "W_A",
+      "name": "Worker Job Alpha",
+      "duration": 6.0,
+      "dependencies": ["C_START"],
+      "task_type": "worker"
+    },
+    {
+      "task_id": "W_B",
+      "name": "Worker Job Beta",
+      "duration": 7.0,
+      "dependencies": ["C_START"],
+      "task_type": "worker"
+    },
+    {
+      "task_id": "W_C",
+      "name": "Worker Job Gamma",
+      "duration": 5.0,
+      "dependencies": ["C_START"],
+      "task_type": "worker"
+    },
+    {
+      "task_id": "W_D",
+      "name": "Worker Job Delta",
+      "duration": 8.0,
+      "dependencies": ["C_START"],
+      "task_type": "worker"
+    },
+    {
+      "task_id": "C_END",
+      "name": "Consolidate Metrics",
+      "duration": 3.0,
+      "dependencies": ["W_A", "W_B", "W_C", "W_D"],
+      "task_type": "consolidate"
+    }
+  ]
+}

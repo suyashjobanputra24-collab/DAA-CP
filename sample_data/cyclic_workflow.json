@@ -1,0 +1,25 @@
+{
+  "workflow_id": "cyclic_error_01",
+  "name": "Cyclic Error Test Workflow",
+  "number_of_workers": 2,
+  "tasks": [
+    {
+      "task_id": "CYC_1",
+      "name": "Task Alpha",
+      "duration": 5.0,
+      "dependencies": ["CYC_3"]
+    },
+    {
+      "task_id": "CYC_2",
+      "name": "Task Beta",
+      "duration": 4.0,
+      "dependencies": ["CYC_1"]
+    },
+    {
+      "task_id": "CYC_3",
+      "name": "Task Gamma",
+      "duration": 6.0,
+      "dependencies": ["CYC_2"]
+    }
+  ]
+}

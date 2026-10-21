@@ -1,0 +1,35 @@
+{
+  "workflow_id": "chain_pipeline_01",
+  "name": "Sequential Data Pipeline (Chain)",
+  "number_of_workers": 2,
+  "tasks": [
+    {
+      "task_id": "T1",
+      "name": "Ingest Data",
+      "duration": 4.0,
+      "dependencies": [],
+      "task_type": "data"
+    },
+    {
+      "task_id": "T2",
+      "name": "Clean & Validate",
+      "duration": 6.0,
+      "dependencies": ["T1"],
+      "task_type": "preprocess"
+    },
+    {
+      "task_id": "T3",
+      "name": "Train Model",
+      "duration": 12.0,
+      "dependencies": ["T2"],
+      "task_type": "compute"
+    },
+    {
+      "task_id": "T4",
+      "name": "Evaluate & Publish",
+      "duration": 5.0,
+      "dependencies": ["T3"],
+      "task_type": "deploy"
+    }
+  ]
+}

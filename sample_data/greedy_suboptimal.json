@@ -1,0 +1,43 @@
+{
+  "workflow_id": "greedy_suboptimal_01",
+  "name": "Greedy Suboptimal Demonstration (Graham Anomaly)",
+  "number_of_workers": 2,
+  "tasks": [
+    {
+      "task_id": "A1",
+      "name": "Fast Prep A",
+      "duration": 3.0,
+      "dependencies": []
+    },
+    {
+      "task_id": "A2",
+      "name": "Deep Task A",
+      "duration": 3.0,
+      "dependencies": ["A1"]
+    },
+    {
+      "task_id": "B1",
+      "name": "Quick Init B",
+      "duration": 2.0,
+      "dependencies": []
+    },
+    {
+      "task_id": "B2",
+      "name": "Heavy Compute B",
+      "duration": 4.0,
+      "dependencies": ["B1"]
+    },
+    {
+      "task_id": "C1",
+      "name": "Quick Init C",
+      "duration": 2.0,
+      "dependencies": []
+    },
+    {
+      "task_id": "C2",
+      "name": "Heavy Compute C",
+      "duration": 4.0,
+      "dependencies": ["C1"]
+    }
+  ]
+}

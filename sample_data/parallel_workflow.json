@@ -1,0 +1,49 @@
+{
+  "workflow_id": "parallel_batch_01",
+  "name": "Independent Batch Tasks (Parallel)",
+  "number_of_workers": 3,
+  "tasks": [
+    {
+      "task_id": "P1",
+      "name": "Image Rendering A",
+      "duration": 9.0,
+      "dependencies": [],
+      "task_type": "render"
+    },
+    {
+      "task_id": "P2",
+      "name": "Image Rendering B",
+      "duration": 7.0,
+      "dependencies": [],
+      "task_type": "render"
+    },
+    {
+      "task_id": "P3",
+      "name": "Video Encoding A",
+      "duration": 6.0,
+      "dependencies": [],
+      "task_type": "encode"
+    },
+    {
+      "task_id": "P4",
+      "name": "Video Encoding B",
+      "duration": 5.0,
+      "dependencies": [],
+      "task_type": "encode"
+    },
+    {
+      "task_id": "P5",
+      "name": "Audio Synthesis",
+      "duration": 4.0,
+      "dependencies": [],
+      "task_type": "audio"
+    },
+    {
+      "task_id": "P6",
+      "name": "Thumbnail Generation",
+      "duration": 2.0,
+      "dependencies": [],
+      "task_type": "thumb"
+    }
+  ]
+}

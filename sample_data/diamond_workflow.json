@@ -1,0 +1,35 @@
+{
+  "workflow_id": "diamond_dag_01",
+  "name": "Diamond Graph Workflow",
+  "number_of_workers": 2,
+  "tasks": [
+    {
+      "task_id": "D1",
+      "name": "Split Job",
+      "duration": 3.0,
+      "dependencies": [],
+      "task_type": "orchestrate"
+    },
+    {
+      "task_id": "D2",
+      "name": "Map Branch A",
+      "duration": 8.0,
+      "dependencies": ["D1"],
+      "task_type": "compute"
+    },
+    {
+      "task_id": "D3",
+      "name": "Map Branch B",
+      "duration": 5.0,
+      "dependencies": ["D1"],
+      "task_type": "compute"
+    },
+    {
+      "task_id": "D4",
+      "name": "Reduce Aggregation",
+      "duration": 4.0,
+      "dependencies": ["D2", "D3"],
+      "task_type": "aggregate"
+    }
+  ]
+}
